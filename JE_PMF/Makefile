@@ -1,6 +1,6 @@
-#####################################
-##### Makefile for GO generation#####
-#Ke Zhou 2017.04.18 #################
+############################
+#####     Makefile     #####
+#Ke Zhou 2017.04.18 ########
 
 JE_PMF: JE_PMF.o math_zhou.o 
 	gcc -o JE_PMF JE_PMF.o math_zhou.o -lm
