@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J Cp2k
+#SBATCH -p cnall
+#SBATCH -N 3
+#SBATCH -o stdout.%j
+#SBATCH -e stderr.%j
+#SBATCH --no-requeue
+#SBATCH --ntasks-per-node=28
+
+#module load compiles/intel/2019/u4/config
+module load soft/cp2k/6.1.0/intel/config
+exe="/apps/soft/cp2k/cp2k-6.1.0/e5/cp2k-6.1.0/exe/Linux-x86-64-intel/cp2k.popt"
+
+mpiexec.hydra -n 84 ${exe} -i cl.inp >& log
