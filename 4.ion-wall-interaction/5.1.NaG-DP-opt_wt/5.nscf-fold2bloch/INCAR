@@ -1,0 +1,64 @@
+##### step 3 #####
+##################
+ SYSTEM = Graphene
+
+ Flags which affect the runtime for parallel jobs (and don't change the results)
+   ALGO = Fast
+
+ Precision
+   PREC = Normal
+
+ Start parameter for this Run:
+   ISTART = 0    ! job   : 0-new  1-cont  2-samecut
+   ICHARG = 11   ! charge: 1-file 2-atom 10-const
+   LWAVE  = T    ! Write the WAVECAR file
+   LCHARG = F    ! Do not write CHGCAR
+
+ Electronic Relaxation
+   LREAL= Auto
+   ENCUT = 500.000
+   EDIFF =  1E-7
+
+ Ionic Relaxation
+   IBRION = -1
+   ISIF = 2
+   NSW=0
+ Electronic step 
+   NELM   =  200 
+
+ Band Structure related values
+   ISMEAR = 0 ! Gaussian smearing
+   SIGMA = 0.025
+
+#### for DOS ####
+#   LORBIT = 11
+
+#### for DOS ####
+
+   ISPIN  =  2
+   IDIPOL =   3
+   LDIPOL = .TRUE.
+#   EFIELD =  -0.1
+
+ ## increase the bumber of empty bands (NBANDS =...) by a factor 1.2-2 beyond-proposed defalult value to get a reasonable despription of higher state band
+
+ NBANDS = 180
+
+ ### for consistency with static (total_energy) run:
+#NGX=72
+#NGY=72
+#NGZ=112
+NGXF=112
+NGYF=112
+NGZF=224
+
+
+
+
+
+
+
+
+
+ 
+

@@ -1,0 +1,14 @@
+#!/bin/sh
+#BSUB -J h-BN
+#BSUB -q hpc_linux
+#BSUB -n 12 
+#BSUB -o %J.opt -e %J.err
+#BSUB -W 1000:00
+#BSUB -a intelmpi
+#BSUB -R "span[ptile=12]"
+module load compiles/intel/2019/u4/config
+# exe="/apps/soft/vasp/vasp.5.4.4/e5_2680v4/opa/vasp.5.4.4/bin/vasp_std"
+exe="/apps/soft/vasp/vasp.5.4.4/e5_2680v4/opa/vasp.5.4.4/bin/vasp_gam"
+
+# mpiexec.hydra -n 28 ${exe} >& log
+mpirun -np  28 ${exe}

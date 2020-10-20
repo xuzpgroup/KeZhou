@@ -1,0 +1,536 @@
+
+
+*******************************************************************************
+Wed Dec 13 20:27:19 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:27:52 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:28:22 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:29:26 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:29:58 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:30:26 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:30:47 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:32:37 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:39:54 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:40:29 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:44:49 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:45:02 2017
+
+
+FIT:    data read from '01_norm_rtcf.all.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 22:32:25 2017
+
+
+FIT:    data read from 'Cap.ave.dat' u ($1):2
+        format = x:z
+        #datapoints = 1961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x*a)+(1-c1)*exp(-x*b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.3794713770e+02   0.00e+00  1.44e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  54 7.4548947840e-02  -5.04e-01  1.44e-06    4.743227e-03   1.318049e-01   8.548808e-01
+
+After 54 iterations the fit converged.
+final sum of squares of residuals : 0.0745489
+rel. change during last iteration : -5.0359e-06
+
+degrees of freedom    (FIT_NDF)                        : 1958
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00617042
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.8074e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.00474323       +/- 1.25e-05     (0.2636%)
+b               = 0.131805         +/- 0.001518     (1.152%)
+c1              = 0.854881         +/- 0.0006817    (0.07974%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.710  1.000 
+c1              0.947  0.788  1.000 
+
+
+*******************************************************************************
+Wed Dec 13 22:33:22 2017
+
+
+FIT:    data read from 'Cap.ave.dat' u ($1):2
+        format = x:z
+        #datapoints = 3961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x*a)+(1-c1)*exp(-x*b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.3784654604e+03   0.00e+00  1.01e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 2940 out of 3961
+x               = -4.76619       
+z               = 0.463884       
+
+Current set of parameters
+=========================
+a               = -4.76619       
+b               = 1              
+c1              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 22:33:31 2017
+
+
+FIT:    data read from 'Cap.ave.dat' u ($1):2
+        format = x:z
+        #datapoints = 3961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x*a)+(1-c1)*exp(-x*b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.3784654604e+03   0.00e+00  1.01e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 2940 out of 3961
+x               = -4.76619       
+z               = 0.463884       
+
+Current set of parameters
+=========================
+a               = -4.76619       
+b               = 1              
+c1              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 22:33:36 2017
+
+
+FIT:    data read from 'Cap.ave.dat' u ($1):2
+        format = x:z
+        #datapoints = 3961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x*a)+(1-c1)*exp(-x*b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.3784654604e+03   0.00e+00  1.01e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 2940 out of 3961
+x               = -4.76619       
+z               = 0.463884       
+
+Current set of parameters
+=========================
+a               = -4.76619       
+b               = 1              
+c1              = 1              
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 22:35:53 2017
+
+
+FIT:    data read from 'Cap.ave.dat' u ($1):2
+        format = x:z
+        #datapoints = 3961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x*a*100)+(1-c1)*exp(-x*b*10)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.3833654265e+03   0.00e+00  2.38e-11    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 1231 out of 3961
+x               = 1              
+z               = 0.62703        
+
+Current set of parameters
+=========================
+a               = 1              
+b               = -1.11839       
+c1              = 3.00351e+10    
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 22:36:25 2017
+
+
+FIT:    data read from 'Cap.ave.dat' u ($1):2
+        format = x:z
+        #datapoints = 3961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x*a*1000)+(1-c1)*exp(-x*b*100)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.3833654265e+03   0.00e+00  1.27e-89    1.000000e+00   1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR

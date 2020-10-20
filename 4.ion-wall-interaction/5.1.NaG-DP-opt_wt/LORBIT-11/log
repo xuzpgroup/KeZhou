@@ -1,0 +1,52 @@
+ running on   28 total cores
+ distrk:  each k-point on   28 cores,    1 groups
+ distr:  one band on    1 cores,   28 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Aug 15 2019 10:58:36) complex          
+  
+ POSCAR found type information on POSCAR  C  Na O  H 
+ POSCAR found :  4 types and      36 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default,   NCORE=1            might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ found WAVECAR, reading the header
+  number of k-points has changed, file:    41 present:   265
+  trying to continue reading WAVECAR, but it might fail
+ WARNING: stress and forces are not correct
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ reading WAVECAR
+ the WAVECAR file was read successfully
+ charge-density read from file: hBN                                     
+ magnetization density read from file 1
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1    -0.309520613541E+03   -0.30952E+03   -0.35399E+02145572   0.292E+01
+DAV:   2    -0.310213564259E+03   -0.69295E+00   -0.69257E+00138292   0.640E+00
+DAV:   3    -0.310229991594E+03   -0.16427E-01   -0.16426E-01175280   0.945E-01
+DAV:   4    -0.310230440673E+03   -0.44908E-03   -0.44907E-03172368   0.129E-01
+DAV:   5    -0.310230447929E+03   -0.72565E-05   -0.72559E-05184044   0.144E-02
+DAV:   6    -0.310230448075E+03   -0.14540E-06   -0.14507E-06145964   0.155E-03
+   1 F= -.31023045E+03 E0= -.31021405E+03  d E =-.327985E-01  mag=     0.6358
+ writing wavefunctions

@@ -1,0 +1,78 @@
+ running on   28 total cores
+ distrk:  each k-point on   28 cores,    1 groups
+ distr:  one band on    1 cores,   28 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Aug 15 2019 10:58:36) complex          
+  
+ POSCAR found type information on POSCAR  C  Na O  H 
+ POSCAR found :  4 types and      36 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default,   NCORE=1            might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      The number of bands has been changed from the values supplied          |
+|      in the INCAR file. This is a result of running the parallel version.   |
+|      The orbitals not found in the WAVECAR file will be initialized with    |
+|      random numbers, which is usually adequate. For correlated              |
+|      calculations, however, you should redo the groundstate calculation.    |
+|      I found NBANDS    =      180  now  NBANDS  =     196                   |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ found WAVECAR, reading the header
+  number of bands has changed, file:   112 present:   196
+  trying to continue reading WAVECAR, but it might fail
+  number of k-points has changed, file:    41 present:    50
+  trying to continue reading WAVECAR, but it might fail
+ WARNING: stress and forces are not correct
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ reading WAVECAR
+ random initialization beyond band          113
+ the WAVECAR file was read successfully
+ charge-density read from file: hBN                                     
+ magnetization density read from file 1
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1    -0.304634517297E+03   -0.30463E+03   -0.81000E+02 40712   0.252E+01
+RMM:   2    -0.310307272620E+03   -0.56728E+01   -0.56706E+01 58034   0.154E+01
+RMM:   3    -0.310159546819E+03    0.14773E+00   -0.18688E+00 66748   0.202E+00
+RMM:   4    -0.310176625021E+03   -0.17078E-01   -0.19678E-01 70138   0.516E-01
+RMM:   5    -0.310176934976E+03   -0.30995E-03   -0.65657E-03 67987   0.959E-02
+RMM:   6    -0.310176974926E+03   -0.39950E-04   -0.65760E-04 71020   0.273E-02
+RMM:   7    -0.310176976433E+03   -0.15073E-05   -0.38744E-05 66388   0.598E-03
+RMM:   8    -0.310176976805E+03   -0.37260E-06   -0.65686E-06 62164   0.182E-03
+RMM:   9    -0.310176976884E+03   -0.78221E-07   -0.14780E-06 56342   0.610E-04
+RMM:  10    -0.310176976914E+03   -0.30009E-07   -0.54227E-07 54216   0.346E-04
+   1 F= -.31017698E+03 E0= -.31017509E+03  d E =-.376882E-02  mag=     0.6358
+ writing wavefunctions

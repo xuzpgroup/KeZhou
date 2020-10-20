@@ -1,0 +1,46 @@
+Sender: LSF System <lsfadmin@c14b08>
+Subject: Job 14175924: <MSD> Done
+
+Job <MSD> was submitted from host <ln0> by user <thcel> in cluster <cluster1>.
+Job was executed on host(s) <c14b08>, in queue <normal>, as user <thcel> in cluster <cluster1>.
+</tmp/.lsbtmp1722> was used as the home directory.
+</home/thcel/WORK1/zhouke/31_IonInterface/3.Ion.pair/3.Ion.pair/4.Concentration/2.channel.pair.eq/NaCl.0.5M.temp.1/2_MSD_water> was used as the working directory.
+Started at Fri Aug 30 14:58:24 2019
+Results reported at Fri Aug 30 15:06:42 2019
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J MSD
+#BSUB -q priority
+#BSUB -n 1
+#BSUB -o %J.output -e %J.err
+#BSUB -W 240:00
+#BSUB -a intelmpi
+
+./msd > log_msd
+
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :    497.81 sec.
+    Max Memory :       463 MB
+    Max Swap   :      2439 MB
+
+    Max Processes  :         4
+    Max Threads    :         5
+
+The output (if any) follows:
+
+
+
+PS:
+
+Read file <14175924.err> for stderr output of this job.
+

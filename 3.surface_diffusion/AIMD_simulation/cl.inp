@@ -1,0 +1,318 @@
+@SET SYSTEM G-WT
+### For Morse potential 
+### Reference: J. Chen et al. PRL (2016)
+@SET D 0.0578
+@SET A 1.0869565217391304
+@SET Z0 3.85
+
+
+### For LJ-93 potential 
+@SET EE 0.1
+
+### For strucure 
+@SET HH 10.00
+@SET HL 0.00
+
+@SET Htev 27.2116
+@SET FF 0.52918
+
+&GLOBAL
+  PROJECT ${SYSTEM}
+  RUN_TYPE MD             
+  PRINT_LEVEL low
+  EXTENDED_FFT_LENGTHS T
+  SAVE_MEM T
+&END GLOBAL
+
+&FORCE_EVAL
+  ! the electronic structure part of CP2K is named Quickstep
+  METHOD Quickstep
+  STRESS_TENSOR ANALYTICAL
+  &DFT
+    ! basis sets and pseudopotential files can be found in cp2k/data
+    BASIS_SET_FILE_NAME ./GTH_BASIS_SETS    
+    POTENTIAL_FILE_NAME ./POTENTIAL 
+#    WFN_RESTART_FILE_NAME ./G-WT-RESTART.wfn
+
+    ! Charge and multiplicity
+#    CHARGE 1
+#     LSD 
+#    MULTIPLICITY 1
+#     	Two times the total spin plus one. Specify 3 for a triplet, 4 for a quartet, and so on. 
+#	Default is 1 (singlet) for an even number and 2 (doublet) for an odd number of electrons.
+#
+
+    &MGRID
+       ! PW cutoff ... depends on the element (basis) too small cutoffs lead to the eggbox effect.
+       ! certain calculations (e.g. geometry optimization, vibrational frequencies,
+       ! NPT and cell optimizations, need higher cutoffs)
+       CUTOFF [Ry] 500 
+       ##REL_CUTOFF [Ry] 50
+    &END
+
+#   atomic unit of electric field, 1 a.u. = 51.4V/A
+#    &PERIODIC_EFIELD
+#       POLARISATION 0 0 1
+#       INTENSITY 0.00194553  ### 0.1 V/A
+#       INTENSITY 0.00389105  ### 0.2 V/A
+#       INTENSITY 0.00583658  ### 0.3 V/A
+#       INTENSITY 0.00778210  ### 0.4 V/A
+#       INTENSITY 0.00972763  ### 0.5 V/A
+#       INTENSITY 0.01167315  ### 0.6 V/A
+#       INTENSITY 0.01361877  ### 0.7 V/A
+#       INTENSITY 0.01556420  ### 0.8 V/A
+#       INTENSITY 0.017509727  ### 0.9 V/A
+#    &END
+
+
+#    &EXTERNAL_POTENTIAL
+#      FUNCTION (A/B)*Z
+#      VALUES [eV] 0.050 [angstrom] 1.0
+#      PARAMETERS A B
+#    &END EXTERNAL_POTENTIAL
+
+    &QS
+       ! use the GPW method (i.e. pseudopotential based calculations with the Gaussian and Plane Waves scheme).
+       METHOD GPW 
+       ! default threshold for numerics ~ roughly numerical accuracy of the total energy per electron,
+       ! sets reasonable values for all other thresholds.
+       EPS_DEFAULT 1.0E-10 
+       ! used for MD, the method used to generate the initial guess.
+       MAP_CONSISTENT TRUE
+       EXTRAPOLATION ASPC 
+       EXTRAPOLATION_ORDER 4
+    &END
+
+    &POISSON
+       PERIODIC XYZ ! the default, gas phase systems should have 'NONE' and a wavelet solver
+    &END
+
+    &PRINT
+     ! output atomic charge
+     &MULLIKEN 
+       FILENAME ${SYSTEM}
+       &EACH
+ 	 MD 10
+       &END EACH
+     &END MULLIKEN
+     ! output others 
+    &END
+
+    ! use the OT METHOD for robust and efficient SCF, suitable for all non-metallic systems.
+    &SCF                              
+      SCF_GUESS RESTART #ATOMIC ! can be used to RESTART an interrupted calculation
+      MAX_SCF 1000
+      EPS_SCF 1.0E-7 #1.0E-7 ! accuracy of the SCF procedure typically 1.0E-6 - 1.0E-7
+      &OUTER_SCF ! repeat the inner SCF cycle 10 times
+        MAX_SCF 10
+        EPS_SCF 1.0E-7 #1.0E-7 ! must match the above
+      &END
+####### for OT #######
+      CHOLESKY OFF
+      &OT
+        #CHOLESKY OFF
+        ! an accurate preconditioner suitable also for larger systems
+        PRECONDITIONER FULL_ALL
+        ! the most robust choice (DIIS might sometimes be faster, but not as stable).
+        MINIMIZER DIIS ## CG
+        N_DIIS 5
+	ENERGY_GAP 1.0E-5
+      &END OT
+
+###### for diagonalization #######
+#      ADDED_MOS 100
+#      CHOLESKY OFF #INVERSE
+#      &SMEAR ON
+#        METHOD FERMI_DIRAC
+#        ELECTRONIC_TEMPERATURE [K] 300
+#      &END SMEAR
+#      &DIAGONALIZATION
+#        ALGORITHM STANDARD
+#        EPS_ADAPT 0.01
+#      &END DIAGONALIZATION
+
+      &MIXING
+        METHOD BROYDEN_MIXING
+        ALPHA 0.2
+        BETA 1.5
+        NBROYDEN 8
+      &END MIXING
+
+    &END SCF
+
+    ! specify the exchange and correlation treatment
+    &XC
+      ! use a PBE functional 
+      &XC_FUNCTIONAL PBE    
+         &PBE
+           PARAMETRIZATION revPBE
+           #SCALE_C 0.0
+         &END PBE
+         &VWN
+         &END VWN
+      &END XC_FUNCTIONAL
+      ! adding Grimme's D3 correction (by default without C9 terms) 
+      &VDW_POTENTIAL
+         POTENTIAL_TYPE PAIR_POTENTIAL 
+         &PAIR_POTENTIAL
+            TYPE DFTD3
+            #CALCULATE_C9_TERM T
+            #REFEREBCE_C9_TERM T
+            #LONG_RANGE_CORRECTION T
+	    PARAMETER_FILE_NAME dftd3.dat
+            REFERENCE_FUNCTIONAL revPBE
+            R_CUTOFF [angstrom] 11
+         &END
+      &END VDW_POTENTIAL
+      &XC_GRID
+	 XC_SMOOTH_RHO NN50
+	 XC_DERIV NN50_SMOOTH
+      &END
+
+    &END XC
+  &END DFT
+
+    &EXTERNAL_POTENTIAL
+#       FUNCTION ${EE}/${Htev}*(2.0/15.0*(4.1/(Z*${FF}-${HL}))**9-(4.1/(Z*${FF}-${HL}))**3+2.0/15.0*(4.1/(${HH}-Z*${FF}))**9-(4.1/(${HH}-Z*${FF}))**3)
+       FUNCTION ${EE}/${Htev}*2.0/15.0*(4.1/(Z*${FF}-${HL}))
+      ATOMS_LIST 3 6 9 12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96
+    &END EXTERNAL_POTENTIAL
+ 
+  ! description of the system
+  &SUBSYS
+    &CELL 
+      ! unit cells that are orthorhombic are more efficient with CP2K
+      ABC [angstrom] 12.78 12.298 10.0  
+    &END CELL
+
+    ! atom coordinates can be in the &COORD section,
+    ! or provided as an external file.
+    &TOPOLOGY
+      COORD_FILE_NAME 2L.xyz
+      COORD_FILE_FORMAT XYZ
+    &END
+
+    ! MOLOPT basis sets are fairly costly,
+    ! but in the 'DZVP-MOLOPT-SR-GTH' available for all elements
+    ! their contracted nature makes them suitable
+    ! for condensed and gas phase systems alike.
+
+    &KIND C
+      BASIS_SET DZVP-MOLOPT-SR-GTH ## TZV2P-GTH 
+      POTENTIAL GTH-PBE
+    &END KIND
+    &KIND O
+      BASIS_SET DZVP-MOLOPT-SR-GTH ## TZV2P-GTH ###DZVP-GTH-PBE
+      POTENTIAL GTH-PBE-q6
+    &END KIND
+    &KIND H
+      BASIS_SET DZVP-MOLOPT-SR-GTH ## TZV2P-GTH ##DZVP-GTH-PBE
+      POTENTIAL GTH-PBE-q1
+    &END KIND
+
+
+  &END SUBSYS
+&END FORCE_EVAL
+
+! how to propagate the system, selection via RUN_TYPE in the &GLOBAL section
+&MOTION
+ &MD
+   ENSEMBLE NVT  ! sampling the canonical ensemble, accurate properties might need NVE
+   TEMPERATURE [K] 330
+   TIMESTEP [fs] 0.5
+   STEPS 40000 # 20 ps 
+#   COMVEL_TOL 0.00001
+
+    &THERMOSTAT
+       TYPE CSVR
+       REGION MASSIVE #GLOBAL
+       &CSVR
+         TIMECON [fs] 50.0
+       &END CSVR
+    &END THERMOSTAT
+
+#    &THERMOSTAT
+#      REGION MASSIVE
+#      &NOSE
+#  	LENGTH 4
+#	YOSHIDA 9
+#	TIMECON [fs] 100.0
+#	MTS 2
+#      &END NOSE
+#    &END THERMOSTAT
+
+ &END MD
+# &CONSTRAINT
+#   &FIXED_ATOMS
+#     COMPONENTS_TO_FIX XYZ
+#     LIST 1..60
+#   &END FIXED_ATOMS
+# &END CONSTRAINT
+
+
+  &PRINT
+    &TRAJECTORY
+      FILENAME=${SYSTEM}-1.xyz
+      &EACH
+        MD 1
+      &END EACH
+      FORMAT XYZ
+    &END TRAJECTORY
+    &VELOCITIES
+      FILENAME=${SYSTEM}-1.vel
+      &EACH
+       MD 1
+      &END EACH
+      FORMAT XYZ
+    &END VELOCITIES
+    &FORCES
+      FILENAME=${SYSTEM}-1.force
+      &EACH
+       MD 5
+      &END EACH
+    &END FORCES
+    &RESTART
+      FILENAME=${SYSTEM}-1.restart
+      &EACH
+        MD 20
+      &END
+    &END
+
+
+
+    &MIXED_ENERGIES
+     &EACH
+      MD 5
+     &END EACH
+    &END MIXED_ENERGIES
+
+
+    
+    &CELL
+     &EACH
+      MD 1
+     &END EACH
+    &END CELL
+
+   &STRESS
+   &EACH 
+    MD 10
+   &END EACH
+   &END STRESS
+
+   &RESTART_HISTORY
+     &EACH
+       MD 50
+     &END EACH
+   &END RESTART_HISTORY
+
+  &END PRINT
+&END MOTION
+
+#&EXT_RESTART
+# RESTART_FILE_NAME ./G-WT-G-WT-1.restart-1.restart
+# RESTART_POS
+# RESTART_VEL
+# RESTART_CELL
+# RESTART_CONSTRAINT F
+#&END EXT_RESTART

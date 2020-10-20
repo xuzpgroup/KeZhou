@@ -1,0 +1,105 @@
+#### water in GO film
+dimension	3
+boundary	p p p
+units           real
+neigh_modify    delay 2 every 1
+
+atom_style      full
+pair_style      lj/cut/coul/long 10.0
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+kspace_style    pppm 1e-4
+#kspace_style    ewald 1e-4
+
+print "############ Loading ############"
+#read_data       H10.data
+read_restart	re.restart
+
+timestep        1.0
+include 	FF.water.ion.prm
+
+## group ##
+group   GO	type	1:6
+group	Gr	type	1 2 4
+group   water	type	7 8
+group   exo	type	3 5 6
+group   sys	type	7 8 9 10 
+group   ions	type	9 10
+
+
+compute	   rGO		GO	com
+compute	   twt		water	temp
+compute	   tGO		GO	temp
+compute	   tsys		sys	temp
+#compute    rIONS	IONS	com
+
+compute	   str0 	water  stress/atom NULL
+compute	   strG 	GO     stress/atom NULL
+compute    p0  		water  reduce sum c_str0[1] c_str0[2] c_str0[3]
+compute    pG  		GO     reduce sum c_strG[1] c_strG[2] c_strG[3]
+
+compute		myRDF	all rdf 200  9 8 8 8 
+
+
+variable   vil	equal  lx*ly*lz
+variable   vilG	equal  vol/lz*3.4
+
+variable   p01  equal  -c_p0[1]/v_vil
+variable   p02  equal  -c_p0[2]/v_vil
+variable   p03  equal  -c_p0[3]/v_vil
+variable   pG1  equal  -c_pG[1]/v_vilG
+variable   pG2  equal  -c_pG[2]/v_vilG
+variable   pG3  equal  -c_pG[3]/v_vilG
+
+compute    ff water	group/group GO
+
+###
+#displace_atoms	ions move	XXX 0 0 units box
+
+
+
+## temperature
+	variable up equal 700.0 
+	variable t  equal 300.0 
+	variable st equal 50.0 
+
+## temperature
+
+
+print "###########################################"
+print "############ Staring claculate ############"
+print "###########################################"
+
+#fix	rigid	all	shake 0.0001 20 0 b 6 8 a 6 11
+fix	rigid	all	shake 0.0001 20 0 b 8 a 11
+
+
+thermo 1000
+thermo_style	custom step temp c_twt c_tsys lx ly lz density v_p01 v_p02 v_p03  pxx pyy pzz ke pe 
+
+
+#reset_timestep 0
+fix     1       sys     nvt temp ${t} ${t} 1000.0
+
+
+#fix     plu 	all 	plumed plumedfile plumed.nnp.dat outfile plumed.out # Use plumed
+fix     plu 	all 	plumed plumedfile plumed.dat outfile plumed.out # Use plumed
+
+
+dump    3      	all     xyz  5000    all.ele.dat 
+dump_modify    	3       element CA CT OS CF OH HO HW OW Na Cl
+
+dump    41      all   custom  1000    sys.xyz id type x y z
+dump_modify    	41       sort    id
+
+#dump	5	ions	custom	250	ions.dat id mol type q x y z xu yu zu  
+
+#dump	6	all	xyz 	20000  t.movies.xyz
+
+restart  	1000000 ./ions.eq.*.restart  ## 0.1 ns pre 
+
+run         5000000
+
+write_restart   t.v.restart
+write_data	NaGO.6.8.data

@@ -1,0 +1,199 @@
+#### water in GO film
+dimension	3
+boundary	p p p
+units           real
+neigh_modify    delay 2 every 1
+#processors	* * 1
+
+
+atom_style      full
+pair_style      lj/cut/coul/long 10.0
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+kspace_style    pppm 1e-4
+#kspace_style    ewald 1e-4
+
+print "############ Loading ############"
+read_data       GO.data
+
+#read_restart	eq.restart
+print "###########################################"
+timestep        1.0
+include 	FF.water.ion.prm
+print "###########################################"
+print "###########################################"
+## group ##
+
+group   GO	type	1:6
+group	Gr	type	1 2 4
+group   water	type	7 8
+group   exo	type	3 5 6
+group   sys	type	7 8 9 10
+group   ions	type	9 10
+group   cat	type	9
+group   act	type	10
+
+group	G2	molecule	2
+#group   deled	molecule	352 
+
+#displace_atoms   act  move  2.43200 0 0  units box
+#displace_atoms   ions move 10 0 0 units box
+
+print "###########################################"
+compute	   rGO		GO	com
+compute	   twt		water	temp
+compute	   tGO		GO	temp
+compute	   tsys		sys	temp
+
+
+compute	   str0 	water  stress/atom NULL
+compute	   strG 	GO     stress/atom NULL
+compute    p0  		water  reduce sum c_str0[1] c_str0[2] c_str0[3]
+compute    pG  		GO     reduce sum c_strG[1] c_strG[2] c_strG[3]
+
+#compute		myRDF	all rdf 200  9 8 8 8 
+
+
+variable   vil	equal  lx*ly*lz
+variable   vilG	equal  vol/lz*3.4
+
+variable   p01  equal  -c_p0[1]/v_vil
+variable   p02  equal  -c_p0[2]/v_vil
+variable   p03  equal  -c_p0[3]/v_vil
+variable   pG1  equal  -c_pG[1]/v_vilG
+variable   pG2  equal  -c_pG[2]/v_vilG
+variable   pG3  equal  -c_pG[3]/v_vilG
+
+compute    ff water	group/group GO
+
+
+## temperature
+	variable up equal 420.0 
+	variable t  equal 300.0 
+	variable st equal 50.0 
+
+## temperature
+
+print "################## Minimize #####################"
+#-- minimize --
+thermo 100
+fix		fixGr 	Gr	setforce 0 0 0
+##fix		fixion 	ions	setforce 0 0 0
+
+thermo_style	custom step lx ly lz press pxx pyy pzz ke pe 
+dump 1 all xyz 100 minimize.xyz
+min_style      cg
+minimize          1.0e-6 1.0e-8 100000 1000000
+undump 1 
+unfix	fixGr
+###unfix	fixion
+
+
+
+thermo 1000
+#fix	rigid	all	shake 0.0001 20 0 m 1.00
+#fix	rigid	all	shake 0.0001 20 0 b 6 8 a 6 11
+fix	rigid	all	shake 0.0001 20 0 b 8 a 11
+
+
+print "###########################################"
+print "############ Staring claculate ############"
+print "###########################################"
+
+
+
+thermo 1000
+thermo_style	custom step temp c_twt c_tsys lx ly lz density v_p01 v_p02 v_p03  pxx pyy pzz ke pe 
+fix     1       sys     nve
+run	1000
+unfix	1
+
+
+
+
+fix	1	sys	nve
+fix	2	sys	temp/berendsen  ${st} ${up} 1000
+dump	1	all	xyz 1000  t.01.xyz
+run		250000
+unfix 1
+unfix 2
+undump 1
+write_restart	t.0.restart
+
+
+fix	1	sys	nve
+fix	2	sys	temp/berendsen ${up} ${up} 1000
+dump	1	all	xyz 1000  t.02.xyz
+run             500000
+unfix	1
+unfix	2
+undump 1
+write_restart   t.02.restart
+
+fix	1	sys	nve
+fix	2	sys	temp/berendsen ${up} ${t} 1000
+dump	1	all	xyz 1000  t.03.xyz
+run             250000
+unfix	1
+unfix	2
+undump 1
+write_restart   t.03.restart
+
+fix     	sys  	water	momentum  1000  linear 1 1 0
+
+fix	1	all	nve
+fix	2	all	temp/berendsen ${t} ${t} 1000
+dump	1	all	xyz 1000  t.04.xyz
+run             500000
+unfix	1
+unfix	2
+undump 1
+write_restart   t.04.restart
+
+
+
+fix     1       all     npt temp ${t} ${t} 1000  iso 1 1 1000
+dump	1	all	xyz 1000  p.1.xyz
+run		2000000
+unfix 1
+undump 1
+write_restart	p.1.restart
+write_data	ions.npt.data
+
+
+reset_timestep 0
+
+fix     	c  	all	momentum  100  linear 1 1 1 angular
+
+
+thermo_style	custom step temp c_twt c_tsys lx ly lz density v_p01 v_p02 v_p03  pxx pyy pzz ke pe 
+
+fix     1       all   nvt temp ${t} ${t} 1000.0
+
+fix	80	all	ave/time  20  100  2000  v_p01 v_p02 v_p03  file pp.10.200.dat				## pp
+fix	81	all	ave/time  20  100  2000  v_p01 v_p02 v_p03  file pp.10.200.acm.dat	ave running	## pp
+
+fix	90	all	ave/time  500  100  50000  v_p01 v_p02 v_p03 file pp.10.50000.dat			## pp
+fix	91	all	ave/time  500  100  50000  v_p01 v_p02 v_p03 file pp.10.50000.acm.dat	ave running	## pp
+
+
+dump    3      	all     xyz  5000    all.ele.dat 
+dump_modify    	3       element CA CT OS CF OH HO HW OW Na Cl
+
+
+dump    41      all   custom  1000    sys.xyz id type xu yu zu 
+dump_modify    	41       sort    id
+
+
+dump	51	ions	custom	10	ions.dat id mol type q vx vy vz xu yu zu  
+dump_modify    	51       sort    id
+
+
+dump	1	all	xyz 1000  tv.1.xyz
+run             5000000
+
+write_restart   tv.1.restart
+write_data	ions.eq.data
+
+

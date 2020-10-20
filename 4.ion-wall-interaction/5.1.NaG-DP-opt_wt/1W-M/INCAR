@@ -1,0 +1,40 @@
+
+ SYSTEM =  graphene_metal
+
+   IBRION =      -1               # -1, SC; ionic relax: 0-MD 1-quasi-New 2-CG
+
+ Startparameter for this Run:
+   ISTART =      0               #  job   : 0-new  1-cont  2-samecut
+   ICHARG =      1               #  charge: 1-file 2-atom- 10-const
+
+ Electronic Relaxation 1
+   EDIFF  =   1E-06              #  stopping-criterion for ELM
+   PREC   =   High
+   ENCUT  =   500
+
+
+ DOS related values:
+   ISMEAR =    0               #  = 0, Gaussian smearing 
+   SIGMA  =    0.05
+
+   NSW    =  0    		 #   20 ionic steps should do
+   NELM   =  200 
+
+   ISPIN  =  2
+
+#   IDIPOL =   3
+#   LDIPOL = .TRUE.
+#   EFIELD =  -0.1
+ 
+   #  GGA  =  PE   # Decided by 'LEXCH' in POTCAR: CA-none; 91-91; PE-PE.
+
+#    LELF   =  .TRUE.
+#    LWAVE  =  .TRUE.
+#    LAECHG =  .TRUE.
+    LCHARG =  .TRUE.
+##For charge density mesh 
+    NGX=112
+    NGY=112
+    NGZ=168
+    LREAL = Auto
+

@@ -1,0 +1,11 @@
+#!/bin/sh
+#BSUB -J h-BN
+#BSUB -q hpc_linux
+#BSUB -n 12 
+#BSUB -o %J.opt -e %J.err
+#BSUB -W 1000:00
+#BSUB -a intelmpi
+#BSUB -R "span[ptile=12]"
+
+#mpirun -np 12 /home/xuzp/bin/vasp_isif  
+mpirun -np 12 /home/xuzp/bin/vasp5.3.5_isif_cc

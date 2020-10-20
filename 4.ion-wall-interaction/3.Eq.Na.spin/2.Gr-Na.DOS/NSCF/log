@@ -1,0 +1,83 @@
+ running on   24 total cores
+ distrk:  each k-point on   24 cores,    1 groups
+ distr:  one band on    1 cores,   24 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Apr 11 2019 18:12:45) complex          
+  
+ POSCAR found type information on POSCAR  C  Na
+ POSCAR found :  2 types and      33 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default,   NCORE=1            might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ found WAVECAR, reading the header
+  number of bands has changed, file:   120 present:   144
+  trying to continue reading WAVECAR, but it might fail
+  number of k-points has changed, file:    13 present:    60
+  trying to continue reading WAVECAR, but it might fail
+ WARNING: stress and forces are not correct
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ reading WAVECAR
+ random initialization beyond band          121
+ the WAVECAR file was read successfully
+ charge-density read from file: hBN                                     
+ magnetization density read from file 1
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1    -0.293892912271E+03   -0.29389E+03   -0.45607E+02 38856   0.295E+01
+DAV:   2    -0.295798151351E+03   -0.19052E+01   -0.19010E+01 40848   0.116E+01
+DAV:   3    -0.295845518285E+03   -0.47367E-01   -0.47341E-01 50880   0.145E+00
+DAV:   4    -0.295846390964E+03   -0.87268E-03   -0.87155E-03 50664   0.158E-01
+DAV:   5    -0.295846411996E+03   -0.21032E-04   -0.21025E-04 51168   0.216E-02
+DAV:   6    -0.295846412700E+03   -0.70445E-06   -0.70284E-06 50616   0.268E-03
+   1 F= -.29584641E+03 E0= -.29583617E+03  d E =-.204887E-01  mag=    -0.3429
+ writing wavefunctions
+Job  /jobmgr/lsf8.0/8.0/linux2.6-glibc2.3-x86_64/bin/intelmpi_wrapper -np 24 /home/xuzp/bin/vasp.5.4.4.std
+
+TID   HOST_NAME   COMMAND_LINE            STATUS            TERMINATION_TIME
+===== ========== ================  =======================  ===================
+00000 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00001 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00002 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00003 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00004 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00005 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00006 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00007 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00008 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00009 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00010 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00011 c35b20     /home/xuzp/bin/v  Done                     08/28/2019 16:12:15
+00012 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00013 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00014 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00015 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00016 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00017 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00018 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00019 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00020 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00021 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00022 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21
+00023 c15b10     /home/xuzp/bin/v  Done                     08/28/2019 16:12:21

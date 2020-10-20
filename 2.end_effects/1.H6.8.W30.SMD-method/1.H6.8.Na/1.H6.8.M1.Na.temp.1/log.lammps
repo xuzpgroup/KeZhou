@@ -1,0 +1,123 @@
+LAMMPS (30 Jul 2016)
+#### water in GO film
+dimension	3
+boundary	p p p
+units           real
+neigh_modify    delay 2 every 1
+
+atom_style      full
+pair_style      lj/cut/coul/long 10.0
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+kspace_style    pppm 1e-4
+#kspace_style    ewald 1e-4
+
+print "############ Loading ############"
+############ Loading ############
+read_data       H30.data
+  orthogonal box = (0 0 0) to (84 33.948 13.6)
+  4 by 1 by 1 MPI processor grid
+  reading atoms ...
+  4121 atoms
+  reading velocities ...
+  4121 velocities
+  scanning bonds ...
+  3 = max bonds/atom
+  scanning angles ...
+  3 = max angles/atom
+  scanning dihedrals ...
+  12 = max dihedrals/atom
+  reading bonds ...
+  4016 bonds
+  reading angles ...
+  5421 angles
+  reading dihedrals ...
+  9072 dihedrals
+  3 = max # of 1-2 neighbors
+  6 = max # of 1-3 neighbors
+  18 = max # of 1-4 neighbors
+  18 = max # of special neighbors
+#read_restart	eq.restart
+
+timestep        1.0
+include 	FF.water.ion.prm
+## force parameter for water + ions system
+### FOR PAIR ###
+#pair_coeff	1  1	0.06831	3.3997  # CA Yanlei's	???!!!
+
+pair_coeff	1  1	0.07000	3.5500  # CA	???!!!
+pair_coeff	2  2	0.06600	3.5000  # CT
+pair_coeff	3  3	0.14000	2.9000  # OS
+pair_coeff	4  4	0.07000	3.5500  # CF
+pair_coeff	5  5	0.17000	3.0700  # OH
+pair_coeff	6  6	0.00000	0.0000  # HO
+pair_coeff	7  7	0.10500	3.7500  # CK
+pair_coeff	8  8	0.21000	2.9600  # OK
+
+## for water
+pair_coeff	9  9	0.00000	0.0000  # H-H20
+pair_coeff	10  10	0.15535	3.1660  # O-H20
+
+pair_coeff	1  10	0.09365	3.1900  # C-O(H20)
+pair_coeff	2  10	0.09365	3.1900  # C-O(H20)
+pair_coeff	4  10	0.09365	3.1900  # C-O(H20)
+pair_coeff	7  10	0.09365	3.1900  # C-O(H20)
+
+### for IONS
+### for IONS
+pair_coeff	11  11	0.02639002      2.5907 # Na+  JCTC 2015
+#pair_coeff	11  11	0.12693448	2.9988 # K+   JCTC 2015
+#pair_coeff     11  11    0.01020237      2.4232 # Mg2+ JCTC 2013
+#pair_coeff     11  11    0.09788018      2.9132 # Ca2+ JCTC 2013
+#pair_coeff     11  11    0.0469         2.5136 # Na+  CHARMM36
+#pair_coeff     11  11    0.0870          3.1426 # K+   CHARMM36
+
+pair_coeff	12  12	0.64367011	4.1141 # Cl-  JCTC 2013
+
+pair_modify     shift yes mix arithmetic
+
+### FOR BOND ###
+bond_coeff	1	469.00	1.4000	# CA-CA
+bond_coeff	2	317.00	1.5100	# CA-CT
+bond_coeff	3	469.00	1.4200	# CA-CF
+bond_coeff	4	320.00	1.4100	# CT-OS
+bond_coeff	5	450.00	1.3640	# CF-OH
+bond_coeff	6	553.00	0.9450	# OH-HO
+bond_coeff	7	268.00	1.5290	# CT-CT
+bond_coeff	8	400.00	1.4900	# CK-CA
+bond_coeff	9	570.00	1.2290	# CK-OK
+# for water
+bond_coeff	10	450.00  1.0000  # water O-H
+### FOR ANGLE ###
+angle_coeff    1      	63.00	120	# CA-CA-CA
+angle_coeff    2      	60.00	109.50	# CT-OS-CT
+angle_coeff    3      	70.00	120	# CA-CA-CT
+angle_coeff    4      	50.00	109.50	# CA-CT-OS
+angle_coeff    5      	63.00	114	# CT-CT-CA
+angle_coeff    6      	35.00	113	# CF-OH-HO
+angle_coeff    7      	70.00	120	# CA-CF-OH
+angle_coeff    8      	63.00	120	# CA-CF-CA
+angle_coeff    9      	63.00	120	# CA-CA-CF
+angle_coeff    10      	40.00	109.50	# CA-CT-CA
+angle_coeff    11      	80.00	120.50	# CA-CK-OK
+angle_coeff    12      	85.00	120.50	# CA-CK-CA
+
+# for water
+angle_coeff    13      	55.00	109.47  # water H-O-H
+## FOR DIHIDRAL ###
+dihedral_coeff	1	0.000  7.250  0.000  0.000  # CA-CA-CA-CA
+dihedral_coeff	2	0.650  0.000  3.000  0.000  # CA-CT-OS-CT	!!??
+dihedral_coeff	3	1.300 -0.050  0.200  0.000  # CA-CA-CT-OS	!!??
+dihedral_coeff	4	0.000  7.250  0.000  0.000  # CA-CA-CA-CT
+dihedral_coeff	5	0.000  7.250  0.000  0.000  # CA-CA-CT-CA
+dihedral_coeff	6	0.000  1.682  0.000  0.000  # CA-CF-OH-HO
+dihedral_coeff	7	0.000  7.250  0.000  0.000  # CA-CA-CA-CF
+dihedral_coeff	8	0.000  7.250  0.000  0.000  # CA-CA-CF-CA
+dihedral_coeff	9	0.000  0.000  0.000  0.000  # CA-CA-CF-OH	!!??
+dihedral_coeff	10	0.000  7.250  0.000  0.000  # CT-CA-CA-CT
+dihedral_coeff	11	0.000  7.250  0.000  0.000  # CT-CA-CA-CF
+dihedral_coeff	12	0.000  7.250  0.000  0.000  # CF-CA-CA-CF
+dihedral_coeff	13	0.000  0.000  0.000  0.000  # CA-CT-CT-OS
+dihedral_coeff	14	0.000  2.100  0.000  0.000  # CA-CA-CK-OK
+dihedral_coeff	15	0.0

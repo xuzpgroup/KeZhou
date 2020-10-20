@@ -1,0 +1,226 @@
+#### water in GO film
+dimension	3
+boundary	p p p
+units           real
+neigh_modify    delay 2 every 1
+
+atom_style      full
+pair_style      lj/cut/coul/long 10.0
+bond_style      harmonic
+angle_style     harmonic
+dihedral_style  opls
+kspace_style    pppm 1e-4
+#kspace_style    ewald 1e-4
+
+print "############ Loading ############"
+read_data       GO.6.8.K.data
+#read_restart	eq.restart
+
+timestep        1.0
+
+### FOR PAIR ###  
+#pair_coeff	1  1	0.06831	3.3997  # CA Yanlei's	???!!!
+
+pair_coeff	1  1	0.07000	3.5500  # CA	???!!!
+pair_coeff	2  2	0.06600	3.5000  # CT 
+pair_coeff	3  3	0.14000	2.9000  # OS
+pair_coeff	4  4	0.07000	3.5500  # CF
+pair_coeff	5  5	0.17000	3.0700  # OH
+pair_coeff	6  6	0.00000	0.0000  # HO
+## for water
+pair_coeff	7  7	0.00000	0.0000  # H-H20
+pair_coeff	8  8	0.15535	3.1660  # O-H20
+
+pair_coeff	1  8	0.09365	3.1900  # C-O(H20)
+pair_coeff	2  8	0.09365	3.1900  # C-O(H20)
+pair_coeff	4  8	0.09365	3.1900  # C-O(H20)
+### for IONS
+### for IONS
+#pair_coeff	9  9	0.02639002      2.5907 # Na+  JCTC 2015
+pair_coeff	9  9	0.12693448	2.9988 # K+   JCTC 2015
+#pair_coeff     9  9    0.01020237      2.4232 # Mg2+ JCTC 2013
+#pair_coeff     9  9    0.09788018      2.9132 # Ca2+ JCTC 2013
+
+pair_coeff	10  10	0.64367011	4.1141 # Cl-  JCTC 2013
+pair_coeff	9   10	0.1		10.000 # Keep away to metal ions 
+
+pair_modify     shift yes mix arithmetic
+
+### FOR BOND ###
+bond_coeff	1	469.00	1.4000	# CA-CA
+bond_coeff	2	317.00	1.5100	# CA-CT
+bond_coeff	3	469.00	1.4200	# CA-CF
+bond_coeff	4	320.00	1.4100	# CT-OS
+bond_coeff	5	450.00	1.3640	# CF-OH
+bond_coeff	6	553.00	0.9450	# OH-HO
+bond_coeff	7	268.00	1.5290	# CT-CT
+# for water
+bond_coeff	8	450.00  1.0000  # water O-H
+### FOR ANGLE ###
+angle_coeff    1      	63.00	120	# CA-CA-CA
+angle_coeff    2      	60.00	109.50	# CT-OS-CT
+angle_coeff    3      	70.00	120	# CA-CA-CT
+angle_coeff    4      	50.00	109.50	# CA-CT-OS
+angle_coeff    5      	63.00	114	# CT-CT-CA
+angle_coeff    6      	35.00	113	# CF-OH-HO
+angle_coeff    7      	70.00	120	# CA-CF-OH
+angle_coeff    8      	63.00	120	# CA-CF-CA
+angle_coeff    9      	63.00	120	# CA-CA-CF
+angle_coeff    10      	40.00	109.50	# CA-CT-CA
+# for water
+angle_coeff    11      	55.00	109.47  # water H-O-H
+## FOR DIHIDRAL ###
+dihedral_coeff	1	0.000  7.250  0.000  0.000  # CA-CA-CA-CA
+dihedral_coeff	2	0.650  0.000  3.000  0.000  # CA-CT-OS-CT	!!??
+dihedral_coeff	3	1.300 -0.050  0.200  0.000  # CA-CA-CT-OS	!!??
+dihedral_coeff	4	0.000  7.250  0.000  0.000  # CA-CA-CA-CT
+dihedral_coeff	5	0.000  7.250  0.000  0.000  # CA-CA-CT-CA
+dihedral_coeff	6	0.000  1.682  0.000  0.000  # CA-CF-OH-HO
+dihedral_coeff	7	0.000  7.250  0.000  0.000  # CA-CA-CA-CF
+dihedral_coeff	8	0.000  7.250  0.000  0.000  # CA-CA-CF-CA
+dihedral_coeff	9	0.000  0.000  0.000  0.000  # CA-CA-CF-OH	!!??
+dihedral_coeff	10	0.000  7.250  0.000  0.000  # CT-CA-CA-CT
+dihedral_coeff	11	0.000  7.250  0.000  0.000  # CT-CA-CA-CF
+dihedral_coeff	12	0.000  7.250  0.000  0.000  # CF-CA-CA-CF
+dihedral_coeff	13	0.000  0.000  0.000  0.000  # CA-CT-CT-OS
+
+
+neighbor        2.0         nsq
+neigh_modify    exclude     molecule   all
+
+## group ##
+group   GO	type	1:6
+group	Gr	type	1 2 4
+group   water	type	7 8
+group   exo	type	3 5 6
+group   sys	type	7 8 9 10 
+group   ions	type	9
+
+
+compute	   rGO		GO	com
+compute	   twt		water	temp
+compute	   tGO		GO	temp
+compute	   tsys		sys	temp
+#compute    rIONS	IONS	com
+
+compute	   str0 	water  stress/atom NULL
+compute	   strG 	GO     stress/atom NULL
+compute    p0  		water  reduce sum c_str0[1] c_str0[2] c_str0[3]
+compute    pG  		GO     reduce sum c_strG[1] c_strG[2] c_strG[3]
+
+compute		myRDF	all rdf 200  9 8 8 8 
+
+
+variable   vil	equal  lx*ly*(lz-4.80)
+variable   vilG	equal  vol/lz*7.5
+
+variable   p01  equal  -c_p0[1]/v_vil
+variable   p02  equal  -c_p0[2]/v_vil
+variable   p03  equal  -c_p0[3]/v_vil
+variable   pG1  equal  -c_pG[1]/v_vilG
+variable   pG2  equal  -c_pG[2]/v_vilG
+variable   pG3  equal  -c_pG[3]/v_vilG
+
+compute    ff water	group/group GO
+
+
+## temperature
+	variable up equal 700.0 
+	variable t  equal 300.0 
+	variable st equal 50.0 
+
+## temperature
+
+
+#-- minimize --
+thermo 20
+#fix 000 all box/relax aniso 0.0 
+
+fix		fixGr 	Gr	spring/self	100.0
+thermo_style	custom step lx ly lz press pxx pyy pzz ke pe 
+dump 1 all xyz 100 minimize.xyz
+min_style      cg
+minimize          1.0e-6 1.0e-8 100000 1000000
+undump 1 
+unfix	fixGr
+
+print "###########################################"
+print "############ Staring claculate ############"
+print "###########################################"
+
+#fix	rigid	all	shake 0.0001 20 0 b 6 8 a 6 11
+fix	rigid	all	shake 0.0001 20 0 b 8 a 11
+
+thermo 1000
+fix	1 water nve
+run 	20000
+unfix 1
+
+
+#velocity	water	create ${st} 49256  rot yes dist gaussian
+fix     	fixwt  	water	momentum  1000  linear 1 1 0
+
+#fix     	fixGO  	GO	momentum  100  linear 1 1 0
+#fix		fixGr 	Gr	spring/self	100.0	z
+
+thermo 1000
+thermo_style	custom step temp c_twt c_tsys lx ly lz density v_p01 v_p02 v_p03  pxx pyy pzz ke pe 
+
+
+fix	1	sys	nve
+fix	2	sys	temp/berendsen  ${t} ${up} 1000
+dump	1	all	xyz 1000  t.01.xyz
+run		150000
+unfix 1
+unfix 2
+undump 1
+write_restart	t.0.restart
+
+fix	1	sys	nve
+fix	2	sys	temp/berendsen ${up} ${t} 1000
+dump	1	all	xyz 1000  t.03.xyz
+run             150000
+unfix	1
+unfix	2
+undump 	1
+write_restart   t.03.restart
+
+unfix	fixwt
+
+
+thermo_style	custom step temp c_twt c_tsys lx ly lz density v_p01 v_p02 v_p03  c_ff[1] c_ff[2] c_ff[3] pxx pyy pzz ke pe 
+fix     1       sys     nvt temp ${t} ${t} 1000.0
+dump	1	all	xyz 1000  tv.1.xyz
+run             1000000
+unfix	1
+undump 1
+write_restart   tv.1.restart
+write_data	tv.1.data
+
+
+reset_timestep 0
+
+fix     1       sys     nvt temp ${t} ${t} 1000.0
+
+fix  	51	all	ave/time  250  2000  500000  c_myRDF[*]	file rdf.data		mode vector ### per 0.5 ns
+fix  	52	all	ave/time  250  2000  500000  c_myRDF[*]	file rdf.acm.data	mode vector ave running ### per 0.5 ns
+
+dump    3      	all     xyz  20000    all.ele.dat 
+dump_modify    	3       element CA CT OS CF OH HO HW OW K Cl
+
+dump    4       sys   custom  250    sys.unwrap.xyz id type xu yu zu
+dump_modify     4       sort    id
+
+dump    41      all   custom  250    sys.xyz id type x y z
+dump_modify    	41       sort    id
+
+dump	5	ions	custom	50	ions.dat id mol type q x y z xu yu zu  
+
+dump	6	all	xyz 	20000  t.movies.xyz
+
+restart  	100000 ./ions.eq.*.restart  ## 0.1 ns pre 
+
+run             2000000
+
+write_restart   t.v.restart
+write_data	NaGO.6.8.data

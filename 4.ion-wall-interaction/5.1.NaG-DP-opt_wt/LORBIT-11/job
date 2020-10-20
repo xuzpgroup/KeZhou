@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -J Na.DOS
+#SBATCH -p cnall
+#SBATCH -N 1
+#SBATCH -o stdout.%j
+#SBATCH -e stderr.%j
+#SBATCH --no-requeue
+#SBATCH --ntasks-per-node=28
+
+module load compiles/intel/2019/u4/config
+exe="/apps/soft/vasp/vasp.5.4.4/e5_2680v4/opa/vasp.5.4.4/bin/vasp_std"
+# exe="/apps/soft/vasp/vasp.5.4.4/e5_2680v4/opa/vasp.5.4.4/bin/vasp_gam"
+
+mpiexec.hydra -n 28 ${exe} >& log

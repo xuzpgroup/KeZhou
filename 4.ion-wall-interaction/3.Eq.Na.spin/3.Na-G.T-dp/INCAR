@@ -1,0 +1,42 @@
+ SYSTEM =  hBN
+
+ Startparameter for this Run:
+   ISTART =      1               #  job   : 0-new  1-cont  2-samecut
+   ICHARG =      1               #  charge: 1-file 2-atom- 10-const
+
+ Electronic Relaxation 1
+   EDIFF  =   1E-04              #  stopping-criterion for ELM
+   PREC   =   High
+   ENCUT  =   500
+
+
+ Ionic Relaxation
+   NSW    = 500    		 #   20 ionic steps should do
+   NELM   =   200 
+   IBRION =      2               #   ionic relax: 0-MD 1-quasi-New 2-CG
+   EDIFFG =      -0.05           #   negative = force tolerance eV/Ang
+   ISIF   =      2               #   stress and relaxation  for y direction
+
+ DOS related values:
+   ISMEAR =    0               #  = 0, Gaussian smearing 
+   SIGMA  =    0.05
+
+#   NELECT =   185.00 
+
+   ISPIN  =  2
+
+   IDIPOL =   3
+   LDIPOL = .TRUE.
+ 
+   #  GGA  =  PE   # Decided by 'LEXCH' in POTCAR: CA-none; 91-91; PE-PE.
+
+    LWAVE  =  .TRUE.
+
+    LCHARG =  .TRUE.
+#    LAECHG =  .TRUE.
+
+    LREAL = Auto
+
+#### vdW-D2 functional 
+
+

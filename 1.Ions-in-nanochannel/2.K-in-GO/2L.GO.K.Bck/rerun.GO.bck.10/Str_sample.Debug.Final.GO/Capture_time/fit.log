@@ -1,0 +1,938 @@
+
+
+*******************************************************************************
+Tue Dec 12 16:01:46 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   b            
+   0 6.9157686580e+02   0.00e+00  7.07e-02    1.000000e+00
+   9 1.4855582269e+00  -1.76e-03  7.07e-11    1.664070e+02
+
+After 9 iterations the fit converged.
+final sum of squares of residuals : 1.48556
+rel. change during last iteration : -1.7552e-08
+
+degrees of freedom    (FIT_NDF)                        : 999
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0385622
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00148705
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b               = 166.407          +/- 1.461        (0.8778%)
+
+
+*******************************************************************************
+Tue Dec 12 16:04:21 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/b)+a
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 3.6433954783e+01   0.00e+00  7.09e-01    1.000000e+00   1.000000e+00
+  10 1.9312233538e+00  -2.97e-01  7.09e-11    8.467914e-01   3.315568e-02
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 1.93122
+rel. change during last iteration : -2.96636e-06
+
+degrees of freedom    (FIT_NDF)                        : 998
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0439897
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00193509
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.846791         +/- 0.001393     (0.1645%)
+b               = 0.0331557        +/- 0.003961     (11.95%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.047  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 16:05:49 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/b)
+fitted parameters initialized with current variable values
+
+
+
+*******************************************************************************
+Tue Dec 12 16:05:55 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   b            
+   0 6.9157686580e+02   0.00e+00  7.07e-02    1.000000e+00
+   9 1.4855582269e+00  -1.76e-03  7.07e-11    1.664070e+02
+
+After 9 iterations the fit converged.
+final sum of squares of residuals : 1.48556
+rel. change during last iteration : -1.7552e-08
+
+degrees of freedom    (FIT_NDF)                        : 999
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0385622
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00148705
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b               = 166.407          +/- 1.461        (0.8778%)
+
+
+*******************************************************************************
+Tue Dec 12 16:13:34 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   b            
+   0 5.5282372497e+03   0.00e+00  2.24e-02    1.000000e+00
+  10 8.1557280788e+01  -1.10e-01  2.24e-12    9.701772e+02
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 81.5573
+rel. change during last iteration : -1.10475e-06
+
+degrees of freedom    (FIT_NDF)                        : 9999
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0903136
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00815654
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b               = 970.177          +/- 4.292        (0.4424%)
+
+
+*******************************************************************************
+Tue Dec 12 17:44:04 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 4000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   b            
+   0 1.0018904866e+03   0.00e+00  7.90e-02    1.000000e+00
+   8 2.6445095037e+01  -1.48e-03  7.90e-02    2.755128e+01
+
+After 8 iterations the fit converged.
+final sum of squares of residuals : 26.4451
+rel. change during last iteration : -1.48246e-08
+
+degrees of freedom    (FIT_NDF)                        : 3999
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0813199
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00661293
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+b               = 27.5513          +/- 0.1147       (0.4162%)
+
+
+*******************************************************************************
+Tue Dec 12 17:46:11 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 4000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0018904866e+03   0.00e+00  4.56e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  26 1.3137547369e+00  -3.38e-01  4.56e-10    8.615737e+01   6.144339e+00   5.548353e-01
+
+After 26 iterations the fit converged.
+final sum of squares of residuals : 1.31375
+rel. change during last iteration : -3.3813e-06
+
+degrees of freedom    (FIT_NDF)                        : 3997
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0181297
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000328685
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 86.1574          +/- 1.45         (1.683%)
+b               = 6.14434          +/- 0.06439      (1.048%)
+c1              = 0.554835         +/- 0.003452     (0.6222%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.890  1.000 
+c1             -0.983 -0.935  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 17:51:29 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0901103323e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 6819 out of 20000
+x               = 98.1408        
+z               = 0.163271       
+
+Current set of parameters
+=========================
+a               = 98.1408        
+b               = -0.480358      
+c1              = -1.62186       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 17:51:38 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0901103323e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 6819 out of 20000
+x               = 98.1408        
+z               = 0.163271       
+
+Current set of parameters
+=========================
+a               = 98.1408        
+b               = -0.480358      
+c1              = -1.62186       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 17:52:14 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 4000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 8.7765160404e+02   0.00e+00  2.04e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3737 out of 4000
+x               = 209.303        
+z               = 0.296449       
+
+Current set of parameters
+=========================
+a               = 209.303        
+b               = -0.26321       
+c1              = 0.257847       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 17:53:27 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 4000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 8.7765160404e+02   0.00e+00  2.04e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3737 out of 4000
+x               = 209.303        
+z               = 0.296449       
+
+Current set of parameters
+=========================
+a               = 209.303        
+b               = -0.26321       
+c1              = 0.257847       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 19:00:10 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+BREAK: No data to fit
+
+*******************************************************************************
+Tue Dec 12 19:14:56 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 4000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 8.7765160404e+02   0.00e+00  2.04e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3737 out of 4000
+x               = 209.303        
+z               = 0.296449       
+
+Current set of parameters
+=========================
+a               = 209.303        
+b               = -0.26321       
+c1              = 0.257847       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 19:16:03 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 3830
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 7.7186741831e+02   0.00e+00  5.31e-05    1.000000e+00   1.000000e+00   1.000000e+00
+  13 3.5836436976e-01  -1.58e-03  5.31e-08    4.907804e+02   3.159728e+01   4.395774e-01
+
+After 13 iterations the fit converged.
+final sum of squares of residuals : 0.358364
+rel. change during last iteration : -1.57863e-08
+
+degrees of freedom    (FIT_NDF)                        : 3827
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00967683
+variance of residuals (reduced chisquare) = WSSR/ndf   : 9.36411e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 490.78           +/- 6.347        (1.293%)
+b               = 31.5973          +/- 0.1436       (0.4544%)
+c1              = 0.439577         +/- 0.001871     (0.4256%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.895  1.000 
+c1             -0.985 -0.938  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 20:01:23 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0810300849e+03   0.00e+00  1.29e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3922 out of 10000
+x               = 60.2164        
+z               = 0.293639       
+
+Current set of parameters
+=========================
+a               = 60.2164        
+b               = -0.276254      
+c1              = -3.30911       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 20:01:39 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 10000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0810300849e+03   0.00e+00  1.29e-02    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3922 out of 10000
+x               = 60.2164        
+z               = 0.293639       
+
+Current set of parameters
+=========================
+a               = 60.2164        
+b               = -0.276254      
+c1              = -3.30911       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Tue Dec 12 20:01:59 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 9765
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.3273243802e+02   0.00e+00  1.76e-06    1.000000e+00   1.000000e+00   1.000000e+00
+  10 5.8371351394e+00  -2.54e-01  1.76e-08    2.705587e+02   2.182551e+01   5.758389e-01
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 5.83714
+rel. change during last iteration : -2.54041e-06
+
+degrees of freedom    (FIT_NDF)                        : 9762
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0244529
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000597945
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 270.559          +/- 0.8567       (0.3166%)
+b               = 21.8255          +/- 0.1984       (0.9091%)
+c1              = 0.575839         +/- 0.001497     (0.26%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.634  1.000 
+c1             -0.899 -0.761  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 21:54:12 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 2000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0124455596e+03   0.00e+00  2.89e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  49 3.4026265966e+00  -9.48e-01  2.89e-03    1.488213e+02   1.475305e+02   1.656141e+00
+
+After 49 iterations the fit converged.
+final sum of squares of residuals : 3.40263
+rel. change during last iteration : -9.47731e-06
+
+degrees of freedom    (FIT_NDF)                        : 1997
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0412779
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00170387
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 148.821          +/- 1.097e+06    (7.374e+05%)
+b               = 147.531          +/- 3.436e+06    (2.329e+06%)
+c1              = 1.65614          +/- 3.155e+06    (1.905e+08%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b              -1.000  1.000 
+c1             -1.000  1.000  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 21:54:55 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1941
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.8540253557e+02   0.00e+00  7.43e-03    1.000000e+00   1.000000e+00   1.000000e+00
+  45 3.5269211297e-02  -5.81e-01  7.43e-11    2.281823e+02   8.314193e+00   8.692432e-01
+
+After 45 iterations the fit converged.
+final sum of squares of residuals : 0.0352692
+rel. change during last iteration : -5.80565e-06
+
+degrees of freedom    (FIT_NDF)                        : 1938
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.004266
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.81988e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 228.182          +/- 0.4618       (0.2024%)
+b               = 8.31419          +/- 0.07483      (0.9001%)
+c1              = 0.869243         +/- 0.0005048    (0.05807%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.736  1.000 
+c1             -0.953 -0.811  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 21:55:15 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1921
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.6949315355e+02   0.00e+00  3.53e-03    1.000000e+00   1.000000e+00   1.000000e+00
+  12 2.8160190626e-02  -9.02e-01  3.53e-10    2.298421e+02   8.773073e+00   8.672045e-01
+
+After 12 iterations the fit converged.
+final sum of squares of residuals : 0.0281602
+rel. change during last iteration : -9.02281e-06
+
+degrees of freedom    (FIT_NDF)                        : 1918
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00383172
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.46821e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 229.842          +/- 0.4402       (0.1915%)
+b               = 8.77307          +/- 0.07185      (0.819%)
+c1              = 0.867204         +/- 0.0004805    (0.0554%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.753  1.000 
+c1             -0.957 -0.825  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 21:55:31 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.9974277587e+02   0.00e+00  1.44e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  28 4.5207381464e-02  -2.34e-01  1.44e-08    7.862215e+00   2.265474e+02   1.287408e-01
+
+After 28 iterations the fit converged.
+final sum of squares of residuals : 0.0452074
+rel. change during last iteration : -2.33839e-06
+
+degrees of freedom    (FIT_NDF)                        : 1958
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00480505
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.30886e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 7.86222          +/- 0.07924      (1.008%)
+b               = 226.547          +/- 0.4915       (0.2169%)
+c1              = 0.128741         +/- 0.0005383    (0.4181%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.718  1.000 
+c1              0.795  0.949  1.000 
+
+
+*******************************************************************************
+Tue Dec 12 21:55:48 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1941
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.8540253557e+02   0.00e+00  7.43e-03    1.000000e+00   1.000000e+00   1.000000e+00
+  45 3.5269211297e-02  -5.81e-01  7.43e-11    2.281823e+02   8.314193e+00   8.692432e-01
+
+After 45 iterations the fit converged.
+final sum of squares of residuals : 0.0352692
+rel. change during last iteration : -5.80565e-06
+
+degrees of freedom    (FIT_NDF)                        : 1938
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.004266
+variance of residuals (reduced chisquare) = WSSR/ndf   : 1.81988e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 228.182          +/- 0.4618       (0.2024%)
+b               = 8.31419          +/- 0.07483      (0.9001%)
+c1              = 0.869243         +/- 0.0005048    (0.05807%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.736  1.000 
+c1             -0.953 -0.811  1.000 
+
+
+*******************************************************************************
+Wed Dec 13 20:34:37 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 2.2689633498e+03   0.00e+00  9.13e-03    1.000000e+00   1.000000e+00   1.000000e+00
+
+Current data point
+=========================
+#               = 3818 out of 20000
+x               = 135.097        
+z               = 0.422735       
+
+Current set of parameters
+=========================
+a               = 135.097        
+b               = -0.26889       
+c1              = -3.35523       
+
+BREAK: Undefined value during function evaluation
+
+*******************************************************************************
+Wed Dec 13 20:35:42 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($3):4
+        format = x:z
+BREAK: No data to fit
+
+*******************************************************************************
+Wed Dec 13 20:36:07 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 20000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=exp(-x/a)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 2.2689633498e+03   0.00e+00  1.12e-02    1.000000e+00   1.000000e+00
+BREAK: Singular matrix in Invert_RtR
+
+*******************************************************************************
+Wed Dec 13 20:37:29 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 2000
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0124455596e+03   0.00e+00  2.89e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  49 3.4026265966e+00  -9.48e-01  2.89e-03    1.488213e+02   1.475305e+02   1.656141e+00
+
+After 49 iterations the fit converged.
+final sum of squares of residuals : 3.40263
+rel. change during last iteration : -9.47731e-06
+
+degrees of freedom    (FIT_NDF)                        : 1997
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0412779
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00170387
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 148.821          +/- 1.097e+06    (7.374e+05%)
+b               = 147.531          +/- 3.436e+06    (2.329e+06%)
+c1              = 1.65614          +/- 3.155e+06    (1.905e+08%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b              -1.000  1.000 
+c1             -1.000  1.000  1.000 
+
+
+*******************************************************************************
+Wed Dec 13 20:38:25 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1980
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0094873649e+03   0.00e+00  2.36e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  32 3.3792076893e+00  -9.19e-01  2.36e-03    1.506678e+02   1.512540e+02   2.599255e+00
+
+After 32 iterations the fit converged.
+final sum of squares of residuals : 3.37921
+rel. change during last iteration : -9.19463e-06
+
+degrees of freedom    (FIT_NDF)                        : 1977
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0413432
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00170926
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 150.668          +/- 5.602e+06    (3.718e+06%)
+b               = 151.254          +/- 5.414e+06    (3.579e+06%)
+c1              = 2.59926          +/- 3.961e+07    (1.524e+09%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b              -1.000  1.000 
+c1              1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Wed Dec 13 20:46:02 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1961
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.9974277587e+02   0.00e+00  1.44e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  28 4.5207381464e-02  -2.34e-01  1.44e-08    7.862215e+00   2.265474e+02   1.287408e-01
+
+After 28 iterations the fit converged.
+final sum of squares of residuals : 0.0452074
+rel. change during last iteration : -2.33839e-06
+
+degrees of freedom    (FIT_NDF)                        : 1958
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.00480505
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.30886e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 7.86222          +/- 0.07924      (1.008%)
+b               = 226.547          +/- 0.4915       (0.2169%)
+c1              = 0.128741         +/- 0.0005383    (0.4181%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.718  1.000 
+c1              0.795  0.949  1.000 
+
+
+*******************************************************************************
+Wed Dec 13 20:47:08 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1980
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 1.0094873649e+03   0.00e+00  2.36e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  32 3.3792076893e+00  -9.19e-01  2.36e-03    1.506678e+02   1.512540e+02   2.599255e+00
+
+After 32 iterations the fit converged.
+final sum of squares of residuals : 3.37921
+rel. change during last iteration : -9.19463e-06
+
+degrees of freedom    (FIT_NDF)                        : 1977
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0413432
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00170926
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 150.668          +/- 5.602e+06    (3.718e+06%)
+b               = 151.254          +/- 5.414e+06    (3.579e+06%)
+c1              = 2.59926          +/- 3.961e+07    (1.524e+09%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b              -1.000  1.000 
+c1              1.000 -1.000  1.000 
+
+
+*******************************************************************************
+Wed Dec 13 20:47:17 2017
+
+
+FIT:    data read from '01_norm_rtcf.data' u ($1):2
+        format = x:z
+        #datapoints = 1960
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=c1*exp(-x/a)+(1-c1)*exp(-x/b)
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b             c1           
+   0 9.9909576749e+02   0.00e+00  1.40e-02    1.000000e+00   1.000000e+00   1.000000e+00
+  22 4.4643301721e-02  -3.21e-01  1.40e-07    2.266234e+02   7.883312e+00   8.711652e-01
+
+After 22 iterations the fit converged.
+final sum of squares of residuals : 0.0446433
+rel. change during last iteration : -3.20839e-06
+
+degrees of freedom    (FIT_NDF)                        : 1957
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0047762
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.28121e-05
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 226.623          +/- 0.4898       (0.2161%)
+b               = 7.88331          +/- 0.07899      (1.002%)
+c1              = 0.871165         +/- 0.0005364    (0.06157%)
+
+correlation matrix of the fit parameters:
+                a      b      c1     
+a               1.000 
+b               0.719  1.000 
+c1             -0.950 -0.796  1.000 
